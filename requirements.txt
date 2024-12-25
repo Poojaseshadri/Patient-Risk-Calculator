@@ -1,0 +1,10 @@
+streamlit
+pandas
+google-generativeai
+python-dotenv
+nltk
+plotly
+symspellpy
+scikit-learn
+imblearn
+xgboost
