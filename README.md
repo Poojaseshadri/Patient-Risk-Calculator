@@ -104,8 +104,6 @@ Create a `.env` file in the project root directory:
 GENAI_API_KEY=your_gemini_api_key
 ```
 
-Replace the placeholder with your own API key. Do not upload your `.env` file or API key to GitHub.
-
 ### 7. Run the application
 
 ```bash
