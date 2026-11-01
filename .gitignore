@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment and secrets
+.env
+env
+.env.*
+!.env.example
+
+# Virtual environments
+venv/
+.venv/
+
+# Temporary files
+*.log
+.DS_Store
+
+# Separate Nike logo detection project
+newrobo/
