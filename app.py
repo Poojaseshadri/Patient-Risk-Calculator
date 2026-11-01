@@ -8,7 +8,7 @@ import pandas as pd
 import pickle
 
 # Load the dataset
-data_file = r"E:\Project\datasets\SQL script 3.csv"
+data_file = r'datasets\SQL script 3.csv'
 df = pd.read_csv(data_file)
 
 # Calculate Age from AdmissionYear and BirthYear
@@ -17,7 +17,7 @@ df['BirthYear'] = pd.to_datetime(df['PatientDateOfBirth']).dt.year
 df['Age'] = df['AdmissionYear'] - df['BirthYear']
 
 # Load the saved XGBoost model and pipeline
-model_file = 'E:\Project\models\xgb_pipeline.pkl'
+model_file = r'models\xgb_pipeline.pkl'
 with open(model_file, 'rb') as f:
     loaded_pipeline = pickle.load(f)
 

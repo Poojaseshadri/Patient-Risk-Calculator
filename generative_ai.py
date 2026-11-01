@@ -1,14 +1,24 @@
-import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+from google import genai
 
-# Load environment variables from .env file
 load_dotenv()
 
-# Retrieve the API key from environment variables
-api_key = os.getenv('GENAI_API_KEY')
+api_key = os.getenv("GENAI_API_KEY")
+
+client = genai.Client(api_key=api_key) if api_key else None
+
 
 def chat_bot(prompt):
-    genai.configure(api_key=api_key)  # Replace with your actual API key
-    response = genai.chat(messages=[prompt])
-    return response.last
+    if client is None:
+        return "Gemini API key is missing. Please configure GENAI_API_KEY."
+
+    try:
+        response = client.models.generate_content(
+           model="gemini-3.8-flash",
+            contents=prompt
+        )
+        return response.text or "No response generated."
+
+    except Exception as e:
+        return f"Gemini API error: {str(e)}"

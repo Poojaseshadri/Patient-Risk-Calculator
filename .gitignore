@@ -12,9 +12,11 @@ env
 venv/
 .venv/
 
+# Old model backup
+models/xgb_pipeline_old.pkl
+
 # Temporary files
 *.log
 .DS_Store
 
-# Separate Nike logo detection project
 newrobo/
